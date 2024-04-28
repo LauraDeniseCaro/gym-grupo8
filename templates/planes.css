@@ -1,0 +1,179 @@
+
+
+
+
+/* Selector Universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    color: yellow; 
+
+a{
+    color: var(--primer-color);
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+header{
+    background: black;
+    height: 150px;
+    width: 100%;
+}
+
+.logo-text{
+    font-size: 3vw;
+    color: var(--primer-color);
+    font-weight: bold;
+}
+
+.nav-links{
+    font-size: 2vw;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20%;
+    text-decoration: none;
+}
+
+#banner{
+    background-image: url(/static/img/banner-gym.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    box-shadow: inset 0 0 0 2000px rgba(84, 84, 84, 0.5);
+    text-align: center;
+    font-family color: yellow;
+}
+
+.body{
+    background-color: black;
+    background-image: url('https://img.freepik.com/fotos-premium/fondo-equipos-fitness-gimnasio-entrenamiento-espacio-copia-texto_916191-122398.jpg?size=626&ext=jpg&ga=GA1.2.65572988.1714317977&semt=ais');
+    background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen de fondo */
+}
+.precio{
+    color:green;
+}
+
+h1, h2, p{
+    background: linear-gradient(180deg, black, orange);
+    box-shadow: #8e8c8b;
+    padding: 20px;
+    text-align: center;
+    font-family color: yellow;
+    /* border: outset black;  Borde para visualización */
+    /* border-radius: 10px; borde redondeado*/
+
+}
+
+.img-actividades {
+    width: 75%;
+    padding: 20px;
+    background-position: center;
+}
+
+/* Estilo para el footer */
+footer{
+    display: flex;
+    align-items: center;
+    background-color: var(--segundo-color);
+    height: 100px;
+    width: 100%;
+}
+
+/* Media Queries para dispositivos */
+/* TABLETS */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/* CELULARES */
+@media screen and (max-width: 767px) {
+
+}
+
+.padre{
+ 
+    width: 80%;
+    height: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: celdas; /* Establece el contenedor como una columna */
+    height: 100vh; /* Establece la altura al 100% de la ventana */
+ 
+    
+    justify-content: center; /* Centra horizontalmente */
+    align-items: top; /* Centra verticalmente */
+
+
+    font-weigth: bold;
+}
+
+.row {
+    display: flex;
+    margin: 0;
+   
+
+  
+  }
+  
+  .cell {
+    
+    padding: 5px;
+    height: 100px;
+    width: 200px;
+    margin: 30px;
+    color: yellow;
+    font-size: 26px;
+    border: outset black; /* Borde para visualización */
+    border-radius: 10px; /*borde redondeado*/
+    margin: 5px;
+    background-color: black;
+    text-align: center;
+    vertical-align: middle;
+    top: 50%;
+    left:50%;
+  }
+  .cell2{
+
+    padding: 5px;
+    height: 100px;
+    width: 400px;
+    color: yellow;
+    font-size: 20px;
+ 
+
+    margin: 5px;
+  }
+  }
+
+/* Estilos adicionales para el contenido dentro del contenedor */
+.hijos {
+    color: white;
+    font-size: 30px;
+    height: 100%;
+    width: 300px;
+    margin: 30px;
+    font-weigth: bold;
+    margin: 5px;
+
+}
+
+anima-precio {
+    color: green;
+    font-weigth: bold;
+    transition: background-color 0.5s;
+  }
+  
+  anima-precio:hover {
+    transition: background-color 0.5s;
+    background-color: gold;
+    color:black;
+  }
