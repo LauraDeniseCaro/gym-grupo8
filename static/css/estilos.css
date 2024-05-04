@@ -35,7 +35,7 @@ header{
 .navbar{
     width: 100%;
     margin: auto;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 /*navegacion*/
@@ -80,7 +80,7 @@ a:hover {
 }
 
 .btn-login{
-    margin-right: 40px;
+    /* margin-right: 40px; */
     padding: 10px 40px;
     background-color: var(--primer-color);
     color: var(--segundo-color);
@@ -160,10 +160,24 @@ nav label{
     color: var(--segundo-color);
     transition: .5s;
 }
-/*Nosotros*/
-h2{
-    text-align: center;
+/*CONTENEDOR*/
+
+.container{
+    padding: 1rem;
 }
+
+.container h2{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.container p{
+    text-align: center;
+    padding: 10px;
+}
+
 /*Section actividades*/
 /*Intendo de slider*/
 .slider-box{
@@ -204,12 +218,76 @@ h2{
     100%{margin-left: -300%;}
 }
 
+/*FOOTER*/
 
+.pie-pagina{
+
+    width: 100%;
+    background-color: black;
+}
+
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;/*vemos si lo pongo o lo saco*/
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;    
+
+}
+
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+.pie-pagina .grupo-1 .box h2{
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p{
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: var(--primer-color);
+    margin-right: 10px;
+    background-color: var(--bg-color);
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: var(--bg-input-color);
+}
+.pie-pagina .grupo-2{
+    background-color: var(--bg-color);
+    padding: 15px 10px;
+    text-align: center;
+    color: var(--primer-color);
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
 
 /* Media Queries para dispositivos */
 /* TABLETS */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
+    /*HEADER*/
+    /*NAV*/
+    
     nav .menu {
         width: 100%;
         height: 0;
@@ -217,6 +295,7 @@ h2{
         position: absolute; /* Cambia la posición para superponerse al banner */
         top: 150px; /* Ajusta la posición superior para que empiece después del banner */
         left: 0;
+        z-index: 999;
         transition: height 0.8s ease, background-color 0.8s ease; /* Ajusta la duración de la transición */
         background-color: rgba(0, 0, 0, 0); /* Cambiar el color de fondo a transparente */
     }
@@ -238,7 +317,44 @@ h2{
         height: calc(100% - 100px); /* Ajusta la altura para cubrir el resto de la pantalla */
         background-color: rgba(0, 0, 0, .95); /* Cambiar el color de fondo al mismo que el de nav ul */
     }
- 
+
+
+    /*BANNER*/
+    .banner-text {
+        padding: 0 15px; /* Ajusta el padding horizontal */
+        margin-top: 10px; /* Reducir el margen superior */
+    }
+
+    .banner-text h1 {
+        font-size: 40px; /* Disminuir el tamaño del texto */
+    }
+
+    .banner-text h2 {
+        font-size: 20px; /* Disminuir el tamaño del texto */
+    }
+
+    .banner-text p {
+        font-size: 14px; /* Disminuir el tamaño del texto */
+    }
+
+    .banner-buttons {
+        display: flex;
+        flex-direction: column; /* Colocar los botones uno encima del otro */
+        align-items: center; /* Centrar los botones horizontalmente */
+    }
+
+    .button1, .button2 {
+        margin-bottom: 10px; /* Ajusta la separación entre los botones */
+    }
+
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+
+
 
 }
 
@@ -246,6 +362,8 @@ h2{
 /* CELULARES */
 @media screen and (max-width: 767px) {
 
+    /*HEADER*/
+    /*NAV*/
     nav .menu {
         width: 100%;
         height: 0;
@@ -274,7 +392,47 @@ h2{
         height: calc(100% - 100px); /* Ajusta la altura para cubrir el resto de la pantalla */
         background-color: rgba(0, 0, 0, .95); /* Cambiar el color de fondo al mismo que el de nav ul */
     }
+
+    /*BANNER*/
+
+    .banner-text {
+        padding: 0 10px; /* Ajusta el padding horizontal */
+        margin-top: 10px; /* Reducir el margen superior */
+    }
+
+    .banner-text h1 {
+        font-size: 30px; /* Disminuir el tamaño del texto */
+    }
+
+    .banner-text h2 {
+        font-size: 18px; /* Disminuir el tamaño del texto */
+    }
+
+    .banner-text p {
+        font-size: 12px; /* Disminuir el tamaño del texto */
+    }
+
+    .banner-buttons {
+        display: flex;
+        flex-direction: column; /* Colocar los botones uno encima del otro */
+        align-items: center; /* Centrar los botones horizontalmente */
+    }
+
+    .button1, .button2 {
+        margin-bottom: 10px; /* Ajusta la separación entre los botones */
+    }
+
+    /*FOOTER*/
+
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
  
 
 }
+
+
 
