@@ -25,17 +25,21 @@
       rel="stylesheet"
     />
 
-    <title>Gym</title>
+    <title>Contacto</title>
   </head>
 
   <body>
     <header class="header">
       <nav class="navbar">
         <!-- Logo -->
-        <div id="logo">
+        <div id="logo" class="logo-container">
           <a href="/index.html">
-            <img class="logo" src="/static/img/logo-gym.PNG" alt="" />
-            <!-- <span class="logo-text">GymGym</span> -->
+            <img
+              class="logo"
+              src="/static/img/logo-urban-gym.png"
+              alt="logo URBAN GYM"
+            />
+            <!-- <span class="logo-text">URBAN GYM</span> -->
           </a>
         </div>
         <input type="checkbox" id="check" />
@@ -52,11 +56,9 @@
             <li class="li_links">
               <a class="links" href="/templates/planes.html">Planes</a>
             </li>
-            <li class="li_links">
-              <a class="links" href="/templates/entrenamiento.html"
-                >Entrenamiento</a
-              >
-            </li>
+            <!-- <li class="li_links">
+            <a class="links" href="/templates/entrenamiento.html">Entrenamiento</a>
+          </li> -->
             <li class="links li_links">
               <a href="/templates/clases.html">Clases</a>
             </li>
@@ -69,13 +71,84 @@
     </header>
 
     <main>
-      <section id="contacto">
+      <section id="contacto" class="section-form">
         <!-- Aca tendriamos que armar un form  -->
-        <div class="container">
-          <h2>Contacto</h2>
-          <div class="img-contacto">
-            <img src="/static/img/img-form.PNG" alt="" />
+        <!-- Tiene que tener 5 campos
+        *checkbox (por ejemplo Acepto la Política de privacidad) OK
+        *un select OK
+        *una imagen OK
+        *validacion para que los campos sean obligatorios con js -->
+        <div class="container-form">
+          <div class="info-form">
+            <h2>¡Hola!</h2>
+            <p>
+              Déjanos tus datos y cuéntanos tu inquietud. Te daremos respuesta a
+              la brevedad posible.
+            </p>
+            <a href="#"><i class="fa fa-phone"> (011)15123456789</i></a>
+            <br />
+            <a href="#"
+              ><i class="fa fa-envelope"> contacto@urban-gym.com</i></a
+            >
+            <br />
+            <a href="#"><i class="fa fa-map-marked"> CABA, Argentina</i></a>
+            <br />
           </div>
+
+          <form action="" method="POST" id="form">
+            <div class="form">
+              <div class="campo">
+                <label for="nombre">Nombre y Apellido:</label>
+                <input type="text" name="nombre" class="campo" id="nombre" />
+              </div>
+              <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" class="campo" id="email" />
+              </div>
+              <div class="campo"></div>
+              <div class="campo">
+                <label for="horario-select"
+                  >¿Cual es tu horario de preferencia para entrenar?</label
+                >
+                <select name="opcion" id="opcion-select">
+                  <option value="">--Selecciona una opcion:--</option>
+                  <option value="maniana">Mañana</option>
+                  <option value="tarde">Tarde</option>
+                  <option value="noche">Noche</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <h4>VERIFICACION DE IDENTIDAD</h4>
+                <p>
+                  Por favor, suba una foto legible de su DNI para verificar su
+                  identidad:
+                </p>
+                <label for="foto">Foto de DNI:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" />
+              </div>
+
+              <div class="campo">
+                <label for="asunto">Asunto:</label>
+                <input type="text" name="asunto" class="campo" id="asunto" />
+              </div>
+              <div class="campo">
+                <textarea name="mensaje" rows="10" cols="30"> </textarea>
+              </div>
+              <div class="campo">
+                <input type="checkbox" name="acepto" id="" />
+                <label for="acepto">Acepto la Política de privacidad</label>
+              </div>
+              <div class="campo">
+                <input
+                  id="enviarBtn"
+                  class="button4"
+                  type="button"
+                  value="Enviar"
+                />
+              </div>
+            </div>
+          </form>
         </div>
       </section>
     </main>
@@ -83,17 +156,17 @@
     <footer class="pie-pagina">
       <div class="grupo-1">
         <div class="box">
-          <figure>
+          <figure class="logo-container">
             <a href="#">
-              <img src="/static/img/logo-gym.PNG" alt="" />
+              <img src="/static/img/logo-urban-gym.png" alt="logo URBAN GYM" />
             </a>
           </figure>
         </div>
         <div class="box">
           <h2>SOBRE NOSOTROS</h2>
           <p>
-            Gym es una marca asociada con la actividad física con más de 25 años
-            de experiencia en el mercado.
+            URBAN GYM es una marca asociada con la actividad física con más de
+            25 años de experiencia en el mercado.
           </p>
           <p>Originada en el barrio de Palermo, Buenos Aires</p>
         </div>
@@ -111,5 +184,7 @@
         <small>&copy;2024 <b>GymGym</b>Todos los derechos Reservados.</small>
       </div>
     </footer>
+
+    <script src="/script.js"></script>
   </body>
 </html>
