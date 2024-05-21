@@ -1,3 +1,4 @@
+
 /* :root - Selector especial utilizado para definir variables personalizadas de CSS que se pueden reutilizar en todo el documento. */
 :root {
     --bg-color: #1c1c1c;
@@ -52,6 +53,7 @@ nav{
 .logo-container {
     width: 120px;
     transition: transform 0.3s ease, filter 0.3s ease; 
+    z-index: 999;
 }
 
 .logo{
@@ -93,7 +95,6 @@ a:hover {
 }
 
 .btn-login{
-    /* margin-right: 40px; */
     padding: 10px 40px;
     background-color: var(--primer-color);
     color: var(--segundo-color);
@@ -117,26 +118,23 @@ nav label{
     background-image: url(/static/img/banner-gym.jpg);
     background-size: cover;
     background-position: center;
-    height: 300px;
+    height: 100%;
     box-shadow: inset 0 0 0 3000px rgba(0, 0, 0, 0.6);
     text-align: center;
-    /*cambios*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    padding-bottom: 20px; 
+
 }
 .banner-text{
-    /* padding: 0 30px;
-    margin-top: 20px; */
+    padding: 0 30px;
+    margin-top: 20px;
     text-align: center;
     color: var(--bg-input-color);
-    /*cambios*/
-    max-width: 100%;
+    margin-bottom: 20px;
 }
 
 .banner-text h1{
     font-size: 50px;
+    letter-spacing: 0.1em;
     margin-bottom: 20px;
 }
 
@@ -152,31 +150,26 @@ nav label{
     padding: 10px;
 }
 
-/*cambios*/
 .banner-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.button1, .button2 {
+    max-width: 200px;
+    width: 100%; 
 }
 
-.button1, .button2 {
-    padding: 10px 30px;
-    font-weight: 700;
-    border-radius: 5px;
-    text-align: center;
-    flex: 1;
-    max-width: 200px; /* Limita el ancho máximo de los botones */
-}
-/*cambios*/
 
 .button1{
-    /* margin-right: 40px;
-    padding: 10px 40px; */
+    margin-right: 40px;
+    padding: 10px 40px;
     background-color: var(--primer-color);
     color: var(--segundo-color);
-    /* font-weight: 700;
-    border-radius: 5px; */
+    font-weight: 700;
+    border-radius: 5px;
 }
 
 .button1:hover{
@@ -186,12 +179,12 @@ nav label{
 }
 
 .button2{
-    /* margin-right: 40px;
-    padding: 10px 30px; */
+    margin-right: 40px;
+    padding: 10px 30px;
     background-color: var(--segundo-color);
     color: var(--primer-color);
-    /* font-weight: 700;
-    border-radius: 5px; */
+    font-weight: 700;
+    border-radius: 5px;
 }
 
 .button2:hover{
@@ -215,12 +208,13 @@ nav label{
 .container p{
     text-align: center;
     padding: 10px;
+    font-size: 20px;
 }
 
 /*Section actividades*/
 
 .slider-box{
-    width: 80%;
+    width: 90%;
     height: auto;
     margin: auto;
     overflow: hidden;
@@ -229,13 +223,12 @@ nav label{
 .slider-box ul {
     display: flex;
     padding: 0;
-    /* Calcula el ancho total basado en el número de imágenes */
     width: calc(100% * 9);
     animation: slide 20s infinite alternate ease-in-out;
 }
 
 .slider-box li {
-    width: 11.11%; /* Ancho dividido por el número total de imágenes (9 en este caso) */
+    width: 11.11%; /*  resultado del calc */
     list-style: none;
     position: relative;
 }
@@ -266,7 +259,7 @@ nav label{
 
 .slider-box .caption {
     position: absolute;
-    bottom: 10px; /* Ajusta según tu diseño */
+    bottom: 10px; 
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro transparente */
@@ -276,6 +269,8 @@ nav label{
     font-weight: 600;
     font-size: 30px;
 }
+
+
 
 /*FOOTER*/
 
@@ -287,7 +282,7 @@ nav label{
 
 .pie-pagina .grupo-1{
     width: 100%;
-    max-width: 1200px;/*vemos si lo pongo o lo saco*/
+    max-width: 1200px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -342,6 +337,18 @@ nav label{
 }
 
 /*LOGIN*/
+.contenedor-form{
+    background-image: url(/static/img/fondo\ form.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
 .login-title{
     text-align: center;
     font-weight: 700;
@@ -349,19 +356,17 @@ nav label{
 
 /*podemos copiar estilo para el contacto*/
 .login form{
-    background: var(--bg-color);
     box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 5rem;
+    border-radius: 5px;
+    width: 100%; 
+    background-color: var(--bg-color);
+    padding: 30px;
+    margin-bottom: 20px;
 }
 
-.form{
-    width: 100%;
-}
 
 .login form .grupo{
-    margin: 45px ;
+    margin:45px;
 }
 
 /*podemos copiar estilo para el contacto*/
@@ -388,7 +393,7 @@ nav label{
     border: none;
     display: block;
     width: 80%;
-    margin: 10px auto;
+    margin: 10px auto 20px;
     height: 40px;
     font-size: 24px;
     font-weight: 700;
@@ -402,7 +407,24 @@ nav label{
     transition: .5s;
 }
 
+.login input:focus{
+    outline:0;
+    border: 2px solid var(--primer-color);
+}
+
 /*CONTACTO*/
+
+.container-contacto{
+    background-image: url(/static/img/fondo\ form.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
 .container-form{
     width: 100%;
     max-width: 1100px;
@@ -454,7 +476,7 @@ nav label{
 }
 
 .container-form label,
-.container-form input[type="file"],
+
 .container-form select {
     width: 100%;
     padding: 15px 10px;
@@ -467,17 +489,15 @@ nav label{
     color: var(--primer-color);
 }
 
-.container-form input[type="file"] {
-    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el input de tipo file */
-}
-
 /* Estilos adicionales para el select */
 .container-form select {
     appearance: none; /* Elimina los estilos nativos del sistema operativo */
     cursor: pointer;
-    background-color: var(--tercer-bis-color);
-    color: var(--bg-color2);
+    background-color: var(--bg-color);
+    color: var(--bg-input-color);
     margin-top: 5px;
+    font-weight: 600;
+
 }
 
 .container-form form .campo, textarea{
@@ -489,17 +509,37 @@ nav label{
     outline: 0px;
 }
 .container-form form textarea{
-    max-width: 530px;
-    min-width: 530px;
+    /* max-width: 530px; */
+    min-width: 130px;
     min-height: 140px;
     max-height: 150px;
 }
 
 .container-form form .campo,
 .container-form form textarea {
-    margin-bottom: 20px; /* Reducir el margen inferior */
-    padding: 15px 10px; /* Reducir el relleno */
+    margin-bottom: 20px; 
+    padding: 15px 10px; 
 }
+
+.input-file {
+    display: none;
+}
+
+  
+.campo .label-file {
+    background-color: var(--primer-color);
+    color:var(--bg-color2); 
+    padding: 8px 12px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    display: inline-block;
+    text-align: center; 
+    font-weight: 600;
+  }
+  
+.campo .label-file:hover {
+    background-color: var(--bg-input-color);
+    color: var(--bg-color2);  }
 
 .container-form .button4{
     width: 100%;
@@ -518,6 +558,21 @@ nav label{
     background: var(--bg-input-color);
 }
 
+.container-form input:focus,
+.container-form textarea:focus,
+.container-form select:focus{
+    outline:0;
+    border: 2px solid var(--primer-color);
+}
+
+/*ALERTA DE JS FORM CONTACTO*/
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+  }
+
 /*PLANES*/
 /*Cards*/
 .container-card{
@@ -525,6 +580,8 @@ nav label{
 	display: flex;
 	max-width: 1100px;
 	margin: auto;
+    flex-wrap: wrap;
+	justify-content: center; 
 }
 .title-cards{
 	width: 100%;
@@ -536,7 +593,8 @@ nav label{
 	color:var(--primer-color);
 }
 .card{
-	width: 100%;
+	/* width: 100%; */
+    width: calc(33.3333% - 40px); 
 	margin: 20px;
 	border-radius: 6px;
 	overflow: hidden;
@@ -550,8 +608,11 @@ nav label{
 	transform: translateY(-3%);
 }
 .card img{
-	width: 100%;
-	height: 210px;
+	/* width: 100%;
+	height: 210px; */
+    width: 100%;
+	max-width: 100%;
+	height: auto; 
 }
 .card .contenido-card{
 	padding: 15px;
@@ -583,6 +644,47 @@ nav label{
 	color: var(--bg-color2);
 }
 
+/*CLASES*/
+
+.tabla-horarios{
+    background-image: url(/static/img/fondo\ form.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+.tabla-horarios h1{
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+table, th, td {
+    border: 1px solid var(--bg-input-color);
+    background-color: var(--bg-color2);
+    padding: 8px;
+    text-align: center;
+}
+
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+th {
+    background-color: var(--primer-color);
+    color: var(--segundo-color);
+}
 
 /* Media Queries para dispositivos */
 /* TABLETS */
@@ -594,12 +696,12 @@ nav label{
         width: 100%;
         height: 0;
         overflow: hidden;
-        position: absolute; /* Cambia la posición para superponerse al banner */
-        top: 150px; /* Ajusta la posición superior para que empiece después del banner */
+        position: absolute; 
+        top: 150px;
         left: 0;
         z-index: 999;
-        transition: height 0.8s ease, background-color 0.8s ease; /* Ajusta la duración de la transición */
-        background-color: rgba(0, 0, 0, 0); /* Cambiar el color de fondo a transparente */
+        transition: height 0.8s ease, background-color 0.8s ease; 
+        background-color: rgba(0, 0, 0, 0); 
     }
 
     nav ul {
@@ -616,42 +718,51 @@ nav label{
     }
 
     nav #check:checked ~ .menu {
-        height: calc(100% - 100px); /* Ajusta la altura para cubrir el resto de la pantalla */
-        background-color: rgba(0, 0, 0, .95); /* Cambiar el color de fondo al mismo que el de nav ul */
+        height: calc(100% - 100px); 
+        background-color: rgba(0, 0, 0, .95);
     }
 
 
     /*BANNER*/
     .banner-text {
-        padding: 0 15px; /* Ajusta el padding horizontal */
-        margin-top: 10px; /* Reducir el margen superior */
+        padding: 0 15px;
+        margin-top: 10px; 
+        margin-bottom: 20px;
+
     }
 
     .banner-text h1 {
-        font-size: 40px; /* Disminuir el tamaño del texto */
+        font-size: 40px;
     }
 
     .banner-text h2 {
-        font-size: 20px; /* Disminuir el tamaño del texto */
+        font-size: 20px; 
     }
 
     .banner-text p {
-        font-size: 14px; /* Disminuir el tamaño del texto */
+        font-size: 16px; 
     }
 
     .banner-buttons {
         display: flex;
-        flex-direction: column; /* Colocar los botones uno encima del otro */
-        gap: 10px;
-        align-items: center;
-        /* Centrar los botones horizontalmente */
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px; /*CAMBIO*/
+        margin-bottom: 20px;
     }
 
     .button1, .button2 {
-        width: 100%;
-        max-width: 200px;
-        margin-bottom: 30px; /* Ajusta la separación entre los botones */
+        margin-bottom: 10px; 
+        width: 80%;
+        text-align: center;
     }
+
+    /*NOSOTROS*/
+    .container p{
+        font-size: 16px;
+    }
+
+    /*FOOTER*/
 
     .pie-pagina .grupo-1{
         width: 90%;
@@ -666,18 +777,36 @@ nav label{
         justify-content: center;
 	}
     .card {
-        width: 40%;
+        /* width: 40%; */
+        width: calc(33.3333% - 40px); 
     }
+
+
 
     /*CONTACTO*/
     .container-form {
-        grid-template-columns: repeat(1, 1fr); /* Cambia a una sola columna */
-        margin: auto;
+        /* grid-template-columns: repeat(1, 1fr); 
+        margin: auto; */
+        grid-template-columns: repeat(auto-fit, minmax(150px 1fr));
     }
 
     .section-form{
         padding: 1.5rem;
     }
+
+    /*LOGIN FORM*/
+    .login form {
+        width: 80%; 
+        margin: 30px; 
+    }
+
+    /*TABLA DE CLASES*/
+
+    .tabla-horarios th,
+    .tabla-horarios td {
+        padding: 6px; 
+    }
+
 
 }
 
@@ -691,11 +820,11 @@ nav label{
         width: 100%;
         height: 0;
         overflow: hidden;
-        position: absolute; /* Cambia la posición para superponerse al banner */
-        top: 150px; /* Ajusta la posición superior para que empiece después del banner */
+        position: absolute; 
+        top: 150px; 
         left: 0;
-        transition: height 0.8s ease, background-color 0.8s ease; /* Ajusta la duración de la transición */
-        background-color: rgba(0, 0, 0, 0); /* Cambiar el color de fondo a transparente */
+        transition: height 0.8s ease, background-color 0.8s ease;
+        background-color: rgba(0, 0, 0, 0);
     }
 
     nav ul {
@@ -712,41 +841,47 @@ nav label{
     }
 
     nav #check:checked ~ .menu {
-        height: calc(100% - 100px); /* Ajusta la altura para cubrir el resto de la pantalla */
-        background-color: rgba(0, 0, 0, .95); /* Cambiar el color de fondo al mismo que el de nav ul */
+        height: calc(100% - 100px);
+        background-color: rgba(0, 0, 0, .95); 
     }
 
     /*BANNER*/
 
     .banner-text {
-        padding: 0 10px; /* Ajusta el padding horizontal */
-        margin-top: 10px; /* Reducir el margen superior */
+        padding: 0 10px; 
+        margin-top: 10px; 
+        margin-bottom: 20px;
     }
 
     .banner-text h1 {
-        font-size: 30px; /* Disminuir el tamaño del texto */
+        font-size: 30px; 
     }
 
     .banner-text h2 {
-        font-size: 18px; /* Disminuir el tamaño del texto */
+        font-size: 20px; 
     }
 
     .banner-text p {
-        font-size: 12px; /* Disminuir el tamaño del texto */
+        font-size: 16px;
     }
 
     .banner-buttons {
         display: flex;
-        flex-direction: column; /* Colocar los botones uno encima del otro */
-        gap: 10px;
-        align-items: center;
-        /* Centrar los botones horizontalmente */
+        flex-direction: column;
+        align-items: center; 
     }
 
     .button1, .button2 {
-        width: 100%;
-        max-width: 200px;
-        margin-bottom: 10px; /* Ajusta la separación entre los botones */
+        margin-bottom: 10px; 
+        margin-bottom: 10px;
+        width: 90%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+      /*NOSOTROS*/
+    .container p{
+        font-size: 16px;
     }
 
     /*FOOTER*/
@@ -764,18 +899,32 @@ nav label{
         justify-content: center;
 	}
 	.card{
-        width: 60%;
+        /* width: 60%; */
+        width: calc(100% - 40px); 
     }
 
     /*CONTACTO*/
 
     .container-form {
-        grid-template-columns: repeat(1, 1fr); /* Cambia a una sola columna */
+        grid-template-columns: repeat(1, 1fr); 
         margin: auto;
     }
 
     .section-form{
         padding: 1.5rem;
+    }
+
+    /*LOGIN FORM*/
+    .login form {
+        width: 90%;
+        margin: 40px;
+    }
+
+    /*TABLA DE CLASES*/
+    .tabla-horarios th,
+    .tabla-horarios td {
+        padding: 4px; 
+        font-size: 10px;
     }
 
 }
