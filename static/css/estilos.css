@@ -471,8 +471,6 @@ nav label{
     cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el input de tipo file */
 }
 
-
-
 /* Estilos adicionales para el select */
 .container-form select {
     appearance: none; /* Elimina los estilos nativos del sistema operativo */
@@ -492,7 +490,7 @@ nav label{
 }
 .container-form form textarea{
     max-width: 530px;
-    min-width: 130px;
+    min-width: 530px;
     min-height: 140px;
     max-height: 150px;
 }
@@ -772,14 +770,8 @@ nav label{
     /*CONTACTO*/
 
     .container-form {
-        /* grid-template-columns: repeat(1, 1fr); /* Cambia a una sola columna */
-        /* margin: auto; */
-        grid-template-columns: repeat(
-            auto-fit, 
-            minmax(150px,
-            1fr)
-            )
-        ; 
+        grid-template-columns: repeat(1, 1fr); /* Cambia a una sola columna */
+        margin: auto;
     }
 
     .section-form{
